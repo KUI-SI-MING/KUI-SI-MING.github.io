@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux开发工具,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在Linux的系统设置问题上，学会使用文本编辑器来编辑Linux参数配置文件是一项很重要的能力。Linux环境下的文本编辑器有很多，重点掌握VIM却是很有必要的。VIM是VI的升级版，很多软件的编辑接口会主动调用VI，而VIM已经不仅仅可以作为一个文本编辑器，也可以作为程序开发工具，供程序开发者使用。">
+<meta name="keywords" content="Linux开发工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux开发工具相关问题">
+<meta property="og:url" content="http://yoursite.com/2018/10/21/Linux开发工具相关问题/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="在Linux的系统设置问题上，学会使用文本编辑器来编辑Linux参数配置文件是一项很重要的能力。Linux环境下的文本编辑器有很多，重点掌握VIM却是很有必要的。VIM是VI的升级版，很多软件的编辑接口会主动调用VI，而VIM已经不仅仅可以作为一个文本编辑器，也可以作为程序开发工具，供程序开发者使用。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdn.net/20181003175226376?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20181003175247928?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20181003175602600?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-10-21T13:44:21.506Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux开发工具相关问题">
+<meta name="twitter:description" content="在Linux的系统设置问题上，学会使用文本编辑器来编辑Linux参数配置文件是一项很重要的能力。Linux环境下的文本编辑器有很多，重点掌握VIM却是很有必要的。VIM是VI的升级版，很多软件的编辑接口会主动调用VI，而VIM已经不仅仅可以作为一个文本编辑器，也可以作为程序开发工具，供程序开发者使用。">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20181003175226376?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/21/Linux开发工具相关问题/">
+
+
+
+
+
+  <title>Linux开发工具相关问题 | MyBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MyBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Let life be beautiful like summer fiowers and death like autumn leaves</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/21/Linux开发工具相关问题/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KUI">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux开发工具相关问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-21T19:55:04+08:00">
+                2018-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong><font color="black" size="4" face="楷体">在Linux的系统设置问题上，学会使用文本编辑器来编辑Linux参数配置文件是一项很重要的能力。Linux环境下的文本编辑器有很多，重点掌握VIM却是很有必要的。VIM是VI的升级版，很多软件的编辑接口会主动调用VI，而VIM已经不仅仅可以作为一个文本编辑器，也可以作为程序开发工具，供程序开发者使用。</font></strong><br> <a id="more"></a></p>
+<h4 id="一、-vim的配置"><a href="#一、-vim的配置" class="headerlink" title="一、 vim的配置"></a><font color="red" size="5" face="楷体">一、 vim的配置</font></h4><p><strong><font color="black" size="4" face="楷体"> 一些简单配置Linux的命令有：</font></strong></p>
+<blockquote>
+<p>set nu                           // 在左侧行号<br>set tabstop=4              //tab 长度设置为 4<br>set nobackup               //覆盖文件时不备份<br>set cursorline               //突出显示当前行<br>set ruler                       //在右下角显示光标位置的状态行<br>set autoindent             //自动缩进<br>set mouse=a              //允许使用鼠标移动光标<br>set showmode            //显示左下角状态行<br>set hlsearch                 //搜索时关键字高亮反白<br>set showcmd</p>
+</blockquote>
+<p><strong><font color="black" size="4" face="楷体">配置vim的文件在目录/etc下面，有个名为vimrc的文件，这就是系统中公共的vim配置文件，对所有用户都开放。而在每个用户的主目录下，都可以自己建立私有的配置文件，命名为：”.vimrc”。用vim打开.vimrc键入上述命令保存即可。</font></strong></p>
+<hr>
+<p><strong><font color="black" size="4" face="楷体">关于vim的简单配置详细的介绍：</font></strong><a href="https://www.cnblogs.com/mocuishle/p/7966236.html" target="_blank" rel="noopener">VIM简单配置</a><br><strong><font color="black" size="4" face="楷体">如何获得良好的界面：</font></strong><a href="https://blog.csdn.net/u010871058/article/details/54253774/" target="_blank" rel="noopener">vim配置界面</a><br><strong><font color="black" size="4" face="楷体">要想获得更强大的功能可以点击：</font></strong><a href="https://blog.csdn.net/freeking101/article/details/62037015" target="_blank" rel="noopener">大牛：超级强大的VIM配置(vimplus)</a><br></p>
+<h4 id="二、常用的编辑器-以及这些编辑器之间的区别和优缺点"><a href="#二、常用的编辑器-以及这些编辑器之间的区别和优缺点" class="headerlink" title="二、常用的编辑器, 以及这些编辑器之间的区别和优缺点."></a><font color="red" size="5" face="楷体">二、常用的编辑器, 以及这些编辑器之间的区别和优缺点.</font></h4><p><strong><font color="black" size="4" face="楷体">Linux中强大的编辑器列表</font></strong></p>
+<ul>
+<li><p><strong><font color="black" size="4" face="楷体">VI 编辑器是一个基于命令行的、功能强大的文本编辑器，最早为 Unix 系统开发，后来也被移植到许多的 Unix 和 Linux 发行版上。  VIM（也被称作 VI IMproved）——VI 编辑器的高阶版本，在 VI 已经很强的功能上添加了更多的功能，这些功能有：</font></strong></p>
+<ul>
+<li><strong><font color="black" size="4" face="楷体">支持更多 Linux 发行版，</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">支持多种编程语言，包括 python、c++、perl 等语言的代码块折叠，语法高亮，</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">支持通过多种网络协议，包括 http、ssh 等编辑文件，</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">支持编辑压缩归档中的文件，</font></strong></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong><font color="black" size="4" face="楷体">Emacs：著名的集成开发环境和文本编辑器。Emacs和Vim对于 Linux 桌面上进行文本编辑是重量级的，Emacs演化出了众多分支，其中使用最广泛的两种是：1984年由Richard Stallman发起的GNU Emacs，以及1991年发起的XEmacs。XEmacs是GNU Emacs的分支，至今仍保持着相当的兼容性。最新的的GNU EMACS的功能包括:</font></strong></p>
+<ul>
+<li><strong><font color="black" size="4" face="楷体">内容感知编辑模式，包括许多文件类型的语法着色。</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">完整的内置文档，包括新用户教程。</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">几乎所有人类脚本都支持 完全Unicode。</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">高度可定制，使用Emacs Lisp代码或图形界面。</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">超越文本编辑，包括功能的整个生态系统的项目策划人，邮件和新闻阅读器，调试器接口， 日历，和更多。</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">用于下载和安装扩展的包装系统等等</font></strong></li>
+</ul>
+<hr>
+<p><strong>详情点击：</strong><a href="http://www.gnu.org/software/emacs/" target="_blank" rel="noopener">GNU</a></p>
+</li>
+<li><p><strong><font color="black" size="4" face="楷体">Eclipse：Eclipse 是一个开放源代码的、基于Java的可扩展开发平台。就其本身而言，它只是一个框架和一组服务，用于通过插件组件构建开发环境。幸运的是，Eclipse 附带了一个标准的插件集，包括Java开发工具（Java Development Kit，JDK）。最初主要用来Java语言开发，但是目前亦有人通过插件使其作为其他计算机语言比如C++和Python的开发工具。</font></strong></p>
+<ul>
+<li><strong><font color="black" size="4" face="楷体">在Eclipse中，完全胜任以下编程语言的工作——Python, R, Ruby, JavaScript, Natural, Lasso, C, C++, COBOL, Scheme, Clojure, Groovy等等</font></strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><font color="black" size="4" face="楷体">Eclipse官网：</font></strong><a href="https://www.eclipse.org/downloads/" target="_blank" rel="noopener">ECLIPSEFOUNDATION</a></p>
+<ul>
+<li><p><strong><font color="black" size="4" face="楷体">Brackets：Adobe公司发布了Brackets 1.0，一款针对Web设计人员的免费开源文本编辑器，内置HTML，CSS和JavaScript，方便开发者进行HTML，CSS和JavaScript编程。Brackets 1.0适用于Windows，Mac和Linux操作系统，为Web设计人员和开发人员提供针对性的功能，如：</font></strong></p>
+<ul>
+<li><strong><font color="black" size="4" face="楷体">实时预览，在浏览器视图和源代码之间轻松切换，</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">在特定的代码位进行内联编辑工作，而无需弹出式窗口或其他选项卡。</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">下载和使用扩展，添加功能以帮助他们的工作流程，如Git整合和JSHint支持</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">摘要预览，自动从PSD获取设计信息，</font></strong></li>
+<li><strong><font color="black" size="4" face="楷体">Brackets作为一个开源项目，对于想要自定义文本编辑器的用户，可以从Github上Brackets项目页面下载源代码并修改代码进行编译，来适合自己的需求。</font></strong></li>
+</ul>
+<hr>
+<p>   <font color="black" size="4" face="楷体"><strong>官方网站</strong>：<a href="http://brackets.io/" target="_blank" rel="noopener">http://brackets.io/</a><br>   <font color="black" size="4" face="楷体"><strong>Github代码托管</strong>：<a href="https://www.github.com/adobe/brackets" target="_blank" rel="noopener">https://www.github.com/adobe/brackets</a></font></font></p>
+</li>
+<li><p><strong><font color="black" size="4" face="楷体">LightTable是一个免费开放源代码的编辑器，该编辑器有一个非常干净的界面，并有大量扩展。它与Windows、Mac和Linux都兼容，是高度可定制的。使用Light Table，开发者只需打开一个浏览器窗口即可实时查看更改，并且支持不同的嵌入。</font></strong></p>
+<ul>
+<li><font color="black" size="4" face="楷体"><strong>更改: 我们从 NW.js 切换到了 Electron</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>更改: Light Table 的发行与自更新进程完全地公开在github上</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>增加: Light Table 可以用提供的脚本在各个支持的平台上从源码构建</strong>    </font></li>
+<li><font color="black" size="4" face="楷体"><strong>增加: Light Table 大部分的 node 代码库将通过 npm 依赖来安装，以取代以前采用分叉库的方式</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>增加: 有效文档。更多详情内容见下面</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>修复: 版本号 &gt;= OSX 10.10的系统下的主要的可用性问题</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>更改: 官方不再提供 32位 Linux 软件包下载，不过仍然支持从源码构建</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>修复: ClojureScript eval 支持 ClojureScript 的现代版本</strong></font></li>
+</ul>
+<hr>
+<p><font color="black" size="4" face="楷体"><strong>参阅更多</strong> github.com/LightTable/LightTable/releases</font></p>
+</li>
+<li><p><font color="black" size="4" face="楷体"><strong>Chocolat：Chocolat本身是Mac OS 的最佳代码编辑器。该编辑器旨在与OS无缝集成，Chocolat为JS、Python和HTML提供拖放功能、拆分编辑、代码折叠和代码完成，兼具原生的Cocoa及强大的文本编辑功能。Chocolat支持很多种编程语言的关键字高亮显示、窗口分割、标签页、色彩主题等功能。界面和MacVim非常相似。</strong></font></p>
+</li>
+<li><p><font color="black" size="4" face="楷体"><strong>Sublime Text：Sublime Text 是一个轻量、简洁、高效、跨平台的编辑器。</strong></font></p>
+<ul>
+<li><font color="black" size="4" face="楷体"><strong>支持多光标操作：它能让你对文本中的多个地方同时做修改，你可以看到多个地方在你输入的时候同时发生变化，</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>command palette能够让你轻松的做任何操作，勉去了记忆众多快捷键的痛苦。你只需要打开command palette ，输入几个字母，Sublime Text会用模糊查询给你提供建议和选项。跟直接使用快捷键几乎没区别</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>编辑文件的同时你可以启动编译，看到输出结果，这种交互能让你快速发现编译错误</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>扩展性很好，它使用了Python式的插件系统。</strong></font></li>
+</ul>
+</li>
+</ul>
+<h4 id="三、-常用的编译器-不限制编程语言-不限制平台"><a href="#三、-常用的编译器-不限制编程语言-不限制平台" class="headerlink" title="三、 常用的编译器(不限制编程语言, 不限制平台)"></a><font color="red" size="5" face="楷体">三、 常用的编译器(不限制编程语言, 不限制平台)</font></h4><ul>
+<li><font color="black" size="4" face="楷体"><strong>MSVC:是指微软的VC编译器,随着微软发布基于Clang / C2,MSVC与Clang / C2并行，继 Google Chrome 宣布弃用微软 C++ 编译器（MSVC）Windows 版 Chrome 改用 Clang 之后，Mozilla 的 Firefox 浏览器也宣布开始使用 Clang 编译器编译其 Windows 版本。</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>Clang：Clang 是一个 C++ 编写、基于 LLVM、发布于 LLVM BSD 许可证下的 C/C++/Objective C/Objective C++ 编译器，其目标（之一）就是超越 GCC。Clang 的特性有：</strong><ul>
+<li><font color="black" size="4" face="楷体"><strong>快：通过编译 OS X 上几乎包含了所有 C 头文件的 carbon.h 的测试，包括预处理 (Preprocess)，语法 (lex)，解析 (parse)，语义分析 (Semantic Analysis)，抽象语法树生成 (Abstract Syntax Tree) 的时间，Clang 是 Apple GCC 4.0 的 2.5x 快。</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>内存占用小：Clang 内存占用是源码的 130%，Apple GCC 则超过 10x。</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>诊断信息可读性强：其中错误的语法不但有源码提示，还会在错误的调用和相关上下文的下方有提示。</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>GCC 兼容性。</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>设计清晰简单，容易理解，易于扩展增强。与代码基础古老的 GCC 相比，学习曲线平缓。</strong></font></li>
+<li><font color="black" size="4" face="楷体"><strong>基于库的模块化设计，易于 IDE 集成及其他用途的重用。由于历史原因，GCC 是一个单一的可执行程序编译器，其内部完成了从预处理到最后代码生成的全部过程，中间诸多信息都无法被其他程序重用。Clang 将编译过程分成彼此分离的几个阶段，AST 信息可序列化。通过库的支持，程序能够获取到 AST 级别的信息，将大大增强对于代码的操控能力。对于 IDE 而言，代码补全、重构是重要的功能，然而如果没有底层的支持，只使用 tags 分析或是正则表达式匹配是很难达成的。</strong></font></li>
+</ul>
+</font></li>
+<li><p><font color="black" size="4" face="楷体"><strong>GCC/G++：gcc和g++都是GNU(组织)的一个编译器。gcc 是c的编译器，g++是c++的编译器。(常见GCC和G++的误区：[GCC和G++的区别])</strong>(<a href="https://my.oschina.net/Failure/blog/114283" target="_blank" rel="noopener">https://my.oschina.net/Failure/blog/114283</a>)</font></p>
+</li>
+<li><p><font color="black" size="4" face="楷体"><strong>ICC：全称Intel C++ Compiler，是Intel开发的C/C++/Fortran编译器套装，适用于Linux、Microsoft和Mac OS X操作系统，没有非IA指令集版本(就是说仅供x86架构CPU使用)。ICC广泛应用于高性能计算、分布式计算等商业计算领域，其向量化和并行化性能是业界的标杆，能够充分发挥现代处理器的特性。(ICC官方网：)</strong><a href="https://iccwbo.org/" target="_blank" rel="noopener">ICC</a></font></p>
+</li>
+<li><p><font color="black" size="4" face="楷体"><strong>IBM XL C++：IBM® XL C/C++ 是一种编译器，有助于为 IBM Power Systems™ 创建和维护使用 C/C++ 编写的应用，能最大限度地提高硬件利用率。缺点则是在编译时间上往往过长。对C++标准的支持、开源软件的支持、错误信息的提示上都不够友好，但随着13.2开始结合Clang正在进行优化。(官方网站：[IBM XL C++]</strong>(<a href="https://www.ibm.com/cn-zh/marketplace/xl-cpp-aix-compiler-power)" target="_blank" rel="noopener">https://www.ibm.com/cn-zh/marketplace/xl-cpp-aix-compiler-power)</a>)</font></p>
+</li>
+</ul>
+<h4 id="四、为什么调试的时候需要编译选项中添加-g-介绍readelf命令"><a href="#四、为什么调试的时候需要编译选项中添加-g-介绍readelf命令" class="headerlink" title="四、为什么调试的时候需要编译选项中添加 -g. 介绍readelf命令."></a><font color="red" size="5" face="楷体">四、为什么调试的时候需要编译选项中添加 -g. 介绍readelf命令.</font></h4><h5 id="1-调试的时候加上-g-是为了生成调试信息，以便于GNU调试器利用该信息，"><a href="#1-调试的时候加上-g-是为了生成调试信息，以便于GNU调试器利用该信息，" class="headerlink" title="1 .调试的时候加上 -g 是为了生成调试信息，以便于GNU调试器利用该信息，"></a>1 .<font color="black" size="4" face="楷体">调试的时候加上 -g 是为了生成调试信息，以便于GNU调试器利用该信息，</font></h5><h5 id="2-readelf命令用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file-s-就表示那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之后生成的例如lib-a之类的“静态库”文件）。-ELF文件，-其实就是Executable-amp-Linkable-Format-是一种文件格式，-我们常见的目标文件、动态库和可执行文件，-都属于这个类型。"><a href="#2-readelf命令用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file-s-就表示那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之后生成的例如lib-a之类的“静态库”文件）。-ELF文件，-其实就是Executable-amp-Linkable-Format-是一种文件格式，-我们常见的目标文件、动态库和可执行文件，-都属于这个类型。" class="headerlink" title="2.readelf命令用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file(s)就表示那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之后生成的例如lib*.a之类的“静态库”文件）。(ELF文件， 其实就是Executable &amp; Linkable Format, 是一种文件格式， 我们常见的目标文件、动态库和可执行文件， 都属于这个类型。)"></a>2.<font color="black" size="4" face="楷体">readelf命令用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file(s)就表示那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之后生成的例如lib*.a之类的“静态库”文件）。(ELF文件， 其实就是Executable &amp; Linkable Format, 是一种文件格式， 我们常见的目标文件、动态库和可执行文件， 都属于这个类型。)</font></h5><h4 id="五、-在Linux下实现进度条程序-通过makefile进行编译-以及实现全彩色的进度条"><a href="#五、-在Linux下实现进度条程序-通过makefile进行编译-以及实现全彩色的进度条" class="headerlink" title="五、 在Linux下实现进度条程序. 通过makefile进行编译. 以及实现全彩色的进度条."></a><font color="red" size="5" face="楷体">五、 在Linux下实现进度条程序. 通过makefile进行编译. 以及实现全彩色的进度条.</font></h4><font color="black" size="4" face="楷体"><strong>1.缓冲区概念</strong><br><strong>缓冲区(buffer)这个中文译意源自当计算机的高速部件与低速部件通讯时,必须将高速部件的输出暂存到某处,以保证高速部件与低速部件相吻合. 后来这个意思被扩展了,成为”临时存贮区”的意思。</strong><br>  <strong>缓冲区分为：无缓冲、行缓冲、全缓冲。</strong><br>  <strong>无缓冲：表示的是没有缓冲，可以将信息立马显现出来，典型代表是标准错误流stderr。</strong><br>  <strong>行缓冲：表示的是输入输出遇到换行才执行真正的I/O操作。典型的代表是键盘的操作</strong>。<br>  <strong>全缓冲：表示的是输入输出写满缓冲区才执行I/O操作。典型的代表是磁盘的读写。</strong><br>  <strong>fflush:</strong><br>  <strong>fflush，函数名， 清除读写缓冲区，需要立即把输出缓冲区的数据进行物理写入时。</strong><br>  <strong>fflush(stdin)刷新标准输入缓冲区，把输入缓冲区里的东西丢弃[非标准]</strong><br>  <strong>fflush(stdout)刷新标准输出缓冲区，把输出缓冲区里的东西打印到标准输出设备上</strong><br><br><br><font color="black" size="4" face="楷体"><strong>本文来自 Important_ 的CSDN 博客 ，全文地址请点击：[Linux下实现进度条]</strong>(<a href="https://blog.csdn.net/Important_/article/details/78632500" target="_blank" rel="noopener">https://blog.csdn.net/Important_/article/details/78632500</a>)<br><br><font color="black" size="4" face="楷体"><strong>2.进度条代码</strong><br>prograss_bar.c<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;unistd.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int i = 0;</span><br><span class="line">	char bar[102] = &#123; 0 &#125;;</span><br><span class="line">	const char* lable = &quot;|/-\\&quot;;</span><br><span class="line">	while(i &lt;= 100)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;[%-100s][%d%%][%c]\r&quot;,bar, i, lable[i%4]);//缓冲区未刷新		</span><br><span class="line">		fflush(stdout);//刷新缓冲区</span><br><span class="line">		bar[i++] = &apos;#&apos;;</span><br><span class="line">		usleep(100000);//沉睡100ms</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><font color="black" size="4" face="楷体">Makefile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">prograss_bar:prograss_bar.o</span><br><span class="line">	gcc prograss_bar.c -o prograss_bar</span><br><span class="line">prograss_bar.o:prograss_bar.s</span><br><span class="line">	gcc -c prograss_bar.s -o prograss_bar.o</span><br><span class="line">prograss_bar.s:prograss_bar.i</span><br><span class="line">	gcc -S prograss_bar.i -o prograss_bar.s</span><br><span class="line">prograss_bar.i:prograss_bar.c</span><br><span class="line">	gcc -E prograss_bar.c -o prograss_bar.i</span><br><span class="line"></span><br><span class="line">.PHONE:clean</span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">	rm -f prograss_bar.i prograss_bar.s prograss_bar.o prograss_bar</span><br></pre></td></tr></table></figure><br><br><img src="https://img-blog.csdn.net/20181003175226376?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br><font color="black" size="4" face="楷体"><strong>3.彩色进度条</strong><br>prograss_bar.c<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;unistd.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int i = 0;</span><br><span class="line">	char bar[102] = &#123; 0 &#125;;</span><br><span class="line">	const char* lable = &quot;|/-\\&quot;;</span><br><span class="line">	while(i &lt;= 100)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;\e[34m[%-100s][%d%%][%c]\r\e[0m&quot;,bar, i, lable[i%4]);</span><br><span class="line">		fflush(stdout);</span><br><span class="line">		bar[i++] = &apos;#&apos;;</span><br><span class="line">		usleep(100000);</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><img src="https://img-blog.csdn.net/20181003175247928?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br><font color="black" size="4" face="楷体"><strong>4.当出现下面的情况时可以试下调整字体大小（Ctrl + ‘-‘ 和 Ctrl + Shift+ ‘+’）或者是分辨率。</strong><br><img src="https://img-blog.csdn.net/20181003175602600?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br><br><font color="red" size="5" face="楷体"><strong>六、 Linux下软件安装的几种方式(源码安装, rpm安装, yum安装)</strong><br><strong><font color="black" size="4" face="楷体">1.源码安装：编译源码，然后安装<br>&emsp;1.1安装准备<br>&emsp;&emsp;a..首先用yum安装gcc，用于编译源码<br>&emsp;&emsp;b.管网下载源码包<br>&emsp;&emsp;c、winSCP windows与Linux传输文件（若直接用安装软件的linux电脑下载就不用传输了）<br>&emsp;1.2 安装过程<br>&emsp;&emsp;a、解压<br>&emsp;&emsp;b、进入解压后的目录配置文件  ./configure # 大多数情况下源码包都会带configure这样一个配置工具，具体使用方法可以vim查看其内容<br>&emsp;&emsp;c、make #编译源码包 如果报错了 make clean 清除缓存重新make<br>&emsp;&emsp;d、make install # 安装然后删除源码包软件和安装目录<br><font color="black" size="4" face="楷体">2.rpm安装：<br>&emsp;rpm安装：安装别人编译好的软件包<br>&emsp;rpm即Redhat Package Manager，Redhat的软件包管方式，适用rpm install 命令<br>&emsp;rpm不仅已经把软件源代码编译成二进制文件，而且对软件包依赖的文件，系统环境等做了统计文件扩展名：rpm   还有一种SRPM：没有编译成二进制文件，但是也包含rpm的特性<br><font color="black" size="4" face="楷体">3.yum安装<br>&emsp;用rpm方式安装软件，如果依赖的软件没有事先安装，软件无法安装成功。<br>&emsp;为了解决这个问题，推出yum方式。既然依赖的软件没有安装在机器上，那么就先安装依赖文件，再安装我需要安装的软件。因此yum在安装软件同时安装依赖文件。因此需要一个yum源来放依赖的软件源，对比被安装机器上rpm软件库归根到底，yum也是基于rpm的。</font></font></font></strong><br><br><font color="black" size="4" face="楷体"><strong>Linux下软件安装方式详解：[Linux安装软件]</strong>(<a href="https://www.cnblogs.com/gmlkl/p/9354254.html#_label4_7" target="_blank" rel="noopener">https://www.cnblogs.com/gmlkl/p/9354254.html#_label4_7</a>)<br><br></font>
+</font></font></font></font></font></font></font>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux开发工具/" rel="tag"><i class="fa fa-tag"></i> Linux开发工具</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/21/Mind10_21/" rel="next" title="不求甚解">
+                <i class="fa fa-chevron-left"></i> 不求甚解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">KUI</p>
+              <p class="site-description motion-element" itemprop="description">Sweat is the lubricant of success</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、-vim的配置"><span class="nav-number">1.</span> <span class="nav-text">一、 vim的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、常用的编辑器-以及这些编辑器之间的区别和优缺点"><span class="nav-number">2.</span> <span class="nav-text">二、常用的编辑器, 以及这些编辑器之间的区别和优缺点.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、-常用的编译器-不限制编程语言-不限制平台"><span class="nav-number">3.</span> <span class="nav-text">三、 常用的编译器(不限制编程语言, 不限制平台)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、为什么调试的时候需要编译选项中添加-g-介绍readelf命令"><span class="nav-number">4.</span> <span class="nav-text">四、为什么调试的时候需要编译选项中添加 -g. 介绍readelf命令.</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-调试的时候加上-g-是为了生成调试信息，以便于GNU调试器利用该信息，"><span class="nav-number">4.1.</span> <span class="nav-text">1 .调试的时候加上 -g 是为了生成调试信息，以便于GNU调试器利用该信息，</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-readelf命令用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file-s-就表示那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之后生成的例如lib-a之类的“静态库”文件）。-ELF文件，-其实就是Executable-amp-Linkable-Format-是一种文件格式，-我们常见的目标文件、动态库和可执行文件，-都属于这个类型。"><span class="nav-number">4.2.</span> <span class="nav-text">2.readelf命令用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file(s)就表示那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之后生成的例如lib*.a之类的“静态库”文件）。(ELF文件， 其实就是Executable &amp; Linkable Format, 是一种文件格式， 我们常见的目标文件、动态库和可执行文件， 都属于这个类型。)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、-在Linux下实现进度条程序-通过makefile进行编译-以及实现全彩色的进度条"><span class="nav-number">5.</span> <span class="nav-text">五、 在Linux下实现进度条程序. 通过makefile进行编译. 以及实现全彩色的进度条.</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KUI</span>
+
+  
+</div>
+
+
+  <!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+-->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

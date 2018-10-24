@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="栈,迷宫,回溯法,">
 
 
 
@@ -79,16 +79,22 @@
 
 
 
-<meta name="description" content="艰难困苦 玉汝于成">
-<meta property="og:type" content="website">
-<meta property="og:title" content="葵的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="@[toc] 一、栈  栈是一种重要的线性结构，在数据结构而言，其本质操作是线性表操作的子集。但在数据类型来说，是一种重要的抽象数据类型。在面向对象的程序设计中，栈是多数据类型。 栈只允许在固定的一端进行插入和删除元素操作。进行数据插入和删除操作的一端称为栈顶，另一端称为栈底。不含任何元素的栈称为空栈，栈又称为后进先出的线性表，简称LIFO结构。栈可以将数据从一种序列变到另一种序列。      二">
+<meta name="keywords" content="栈,迷宫,回溯法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="栈应用及迷宫问题">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/栈应用及迷宫问题/index.html">
 <meta property="og:site_name" content="葵的博客">
-<meta property="og:description" content="艰难困苦 玉汝于成">
+<meta property="og:description" content="@[toc] 一、栈  栈是一种重要的线性结构，在数据结构而言，其本质操作是线性表操作的子集。但在数据类型来说，是一种重要的抽象数据类型。在面向对象的程序设计中，栈是多数据类型。 栈只允许在固定的一端进行插入和删除元素操作。进行数据插入和删除操作的一端称为栈顶，另一端称为栈底。不含任何元素的栈称为空栈，栈又称为后进先出的线性表，简称LIFO结构。栈可以将数据从一种序列变到另一种序列。      二">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdn.net/20180921171412195?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180921172140272?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180921171549555?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-10-24T10:25:21.037Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="葵的博客">
-<meta name="twitter:description" content="艰难困苦 玉汝于成">
+<meta name="twitter:title" content="栈应用及迷宫问题">
+<meta name="twitter:description" content="@[toc] 一、栈  栈是一种重要的线性结构，在数据结构而言，其本质操作是线性表操作的子集。但在数据类型来说，是一种重要的抽象数据类型。在面向对象的程序设计中，栈是多数据类型。 栈只允许在固定的一端进行插入和删除元素操作。进行数据插入和删除操作的一端称为栈顶，另一端称为栈底。不含任何元素的栈称为空栈，栈又称为后进先出的线性表，简称LIFO结构。栈可以将数据从一种序列变到另一种序列。      二">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180921171412195?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
 
@@ -118,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/10/24/栈应用及迷宫问题/">
 
 
 
 
 
-  <title>葵的博客</title>
+  <title>栈应用及迷宫问题 | 葵的博客</title>
   
 
 
@@ -143,8 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -279,9 +284,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -311,9 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/24/栈应用及迷宫问题/" itemprop="url">栈应用及迷宫问题</a></h1>
+          <h1 class="post-title" itemprop="name headline">栈应用及迷宫问题</h1>
         
 
         <div class="post-meta">
@@ -385,9 +388,7 @@
       
 
       
-        
-          
-            <p>@[toc]</p>
+        <p>@[toc]</p>
 <h2 id="一、栈"><a href="#一、栈" class="headerlink" title="一、栈"></a>一、栈</h2><ul>
 <li><font color="black" size="4" face="楷体"> 栈是一种重要的线性结构，在数据结构而言，其本质操作是线性表操作的子集。但在数据类型来说，是一种重要的抽象数据类型。在面向对象的程序设计中，栈是多数据类型。</font></li>
 <li><font color="black" size="4" face="楷体">栈只允许在固定的一端进行插入和删除元素操作。进行数据插入和删除操作的一端称为栈顶，另一端称为栈底。不含任何元素的栈称为空栈，栈又称为后进先出的线性表，简称LIFO结构。栈可以将数据从一种序列变到另一种序列。<br></font>
@@ -430,8 +431,6 @@
 <hr>
 <p>  <font color="black" size="5" face="楷体">结合之前的栈的基本操作代码就可以解决迷宫问题了。-(￣▽￣)-*</font></p>
 </font></font></font></font></font></font></font></font></font></font></font>
-          
-        
       
     </div>
     
@@ -446,14 +445,40 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/栈/" rel="tag"><i class="fa fa-tag"></i> 栈</a>
+          
+            <a href="/tags/迷宫/" rel="tag"><i class="fa fa-tag"></i> 迷宫</a>
+          
+            <a href="/tags/回溯法/" rel="tag"><i class="fa fa-tag"></i> 回溯法</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/21/Linux开发工具相关问题/" rel="next" title="Linux开发工具相关问题">
+                <i class="fa fa-chevron-left"></i> Linux开发工具相关问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -463,302 +488,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/21/Linux开发工具相关问题/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="KUI">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="葵的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/21/Linux开发工具相关问题/" itemprop="url">Linux开发工具相关问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-21T19:55:04+08:00">
-                2018-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong><font color="black" size="4" face="楷体">在Linux的系统设置问题上，学会使用文本编辑器来编辑Linux参数配置文件是一项很重要的能力。Linux环境下的文本编辑器有很多，重点掌握VIM却是很有必要的。VIM是VI的升级版，很多软件的编辑接口会主动调用VI，而VIM已经不仅仅可以作为一个文本编辑器，也可以作为程序开发工具，供程序开发者使用。</font></strong><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/21/Linux开发工具相关问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/21/Mind10_21/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="KUI">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="葵的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/21/Mind10_21/" itemprop="url">不求甚解</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-21T10:55:24+08:00">
-                2018-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/心录/" itemprop="url" rel="index">
-                    <span itemprop="name">心录</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="emsp-emsp-谨以为向自由世界奋斗的勇士们致敬！"><a href="#emsp-emsp-谨以为向自由世界奋斗的勇士们致敬！" class="headerlink" title="&emsp;&emsp;谨以为向自由世界奋斗的勇士们致敬！"></a>&emsp;&emsp;谨以为向自由世界奋斗的勇士们致敬！</h4>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/21/Mind10_21/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -766,6 +500,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -786,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -847,6 +594,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、栈"><span class="nav-number">1.</span> <span class="nav-text">一、栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、栈的分类"><span class="nav-number">2.</span> <span class="nav-text">二、栈的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、栈的基本模块"><span class="nav-number">3.</span> <span class="nav-text">三、栈的基本模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、迷宫"><span class="nav-number">4.</span> <span class="nav-text">四、迷宫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、运行结果"><span class="nav-number">5.</span> <span class="nav-text">五、运行结果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -988,6 +751,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

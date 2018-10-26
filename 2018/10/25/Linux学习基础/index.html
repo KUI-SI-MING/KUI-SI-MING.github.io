@@ -89,11 +89,11 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/20181025.png">
 <meta property="og:image" content="http://yoursite.com/img/20181028.png">
-<meta property="og:image" content="https://img-blog.csdn.net/20180812223103305?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180812223457532?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180812230110867?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180812230800465?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-10-25T14:36:21.653Z">
+<meta property="og:image" content="http://yoursite.com/img/20181026134101.png">
+<meta property="og:image" content="http://yoursite.com/img/20180812223457532.png">
+<meta property="og:image" content="http://yoursite.com/img/TIM截图20181026134634.png">
+<meta property="og:image" content="http://yoursite.com/img/TIM截图20181026134729.png">
+<meta property="og:updated_time" content="2018-10-26T05:47:53.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux学习基础">
 <meta name="twitter:description" content="&amp;emsp;了解到Linux系统的产生和发展的过程，对于我来说是一件很幸运的事情，因为这件事让我看到了技术人的品质，开源真的是对技术人的最好的奖励，可以让代码承接自己的精神传扬下去。">
@@ -487,8 +487,8 @@
 <pre><code>1. chmod
                 chmod [参数] 权限 文件名
                 设置文件的访问权限
-</code></pre><p>一. 用户表示符 +/-=权限字符<br>                        实例：<br><img src="https://img-blog.csdn.net/20180812223103305?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<p>二. 三位8进制数字<br>                        实例<br><img src="https://img-blog.csdn.net/20180812223457532?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+</code></pre><p>一. 用户表示符 +/-=权限字符<br>                        实例：<br><img src="/img/20181026134101.png" alt="这里写图片描述"></p>
+<p>二. 三位8进制数字<br>                        实例<br><img src="/img/20180812223457532.png" alt="这里写图片描述"></p>
 <p>三．进入目录需要哪些权限, 在目录中执行增删查(cd, touch, ls, rm, mv等)改文件动作, 需要哪些权限？</p>
 <pre><code>cd：a.语法 cd 目录名（进入目录）            b.所需权限x
 
@@ -522,8 +522,8 @@ mv：a.语法 mv 文件名1  文件名2（把文件名1修改为文件名2）   
 <li>password:登陆密码管理<br>passwd 作为普通用户和超级权限用户都可以运行，但作为普通用户只能更改自己的用户密码，但前提是没有被root用户锁定；如果root用户运行passwd ，可以设置或修改任何用户的密码；<br>主要参数：<br>　　　　-d：删除密码，仅有系统管理者才能使用；<br>　　　　-f：强制执行；<br>　　　　-k：设置只有在密码过期失效后，方能更新；<br>　　　　-l：锁住密码；<br>　　　　-s：列出密码的相关信息，仅有系统管理者才能使用；<br>　　　　-u：解开已上锁的帐号。</li>
 </ul>
 <h3 id="五-如何使用命令安装gcc-g-gdb-vim"><a href="#五-如何使用命令安装gcc-g-gdb-vim" class="headerlink" title="五. 如何使用命令安装gcc/g++, gdb, vim"></a>五. 如何使用命令安装gcc/g++, gdb, vim</h3><p><strong><em>vim是Linux下的编辑器，linux中使用gcc来编译C程序，使用g++来编译C++程序，使用gdb来调试程序</em></strong></p>
-<p><strong>一、vim</strong><br>安装完Centos 后，默认是安装了Vi编辑器的。但Vim编辑器是没安装或者未完全安装的。<br>1）首先，检测是否已经安装过Vim;<br>输入命令：rpm -qa|grep vim<br><img src="https://img-blog.csdn.net/20180812230110867?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>显示出完整的包名： vim-common,vim-enhanced,vim-minimal,vim-filesystem 表示安装成功，有的centos系统，默认包名不同。<br>2）若是缺少Vim包名：则在root下使用命令如下：<br>比如说： vim-minimal这个包少了，执行：yum -y install vim-minimal 命令，它会自动下载安装。<br>3）若下载完成，进行安装：<br>命令：yum -y install vim* 安装完成后则可以使用vim编辑器</p>
-<p><strong>二、gcc/g++</strong><br>Centos中使用yum来配置gcc和g++，在root账户下，若要安装gcc，则在命令行中输入:yum -y install gcc，按回车键就能够进行gcc的安装;若要安装g++，则需要在命令行中输入：yum -y install gcc-c++，就能够进行g++的安装。<br>gdb<br>先使用如下命令看系统中是否安装了gdb，如果安装了，如下图<br><img src="https://img-blog.csdn.net/20180812230800465?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1aXNpOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>如果没有安装，则Centos中使用yum来安装gdb,在root账户下，在命令行中输入：yum install gdb，使用：which gdb 查看是否安装成功</p>
+<p><strong>一、vim</strong><br>安装完Centos 后，默认是安装了Vi编辑器的。但Vim编辑器是没安装或者未完全安装的。<br>1）首先，检测是否已经安装过Vim;<br>输入命令：rpm -qa|grep vim<br><img src="/img/TIM截图20181026134634.png" alt="这里写图片描述"><br>显示出完整的包名： vim-common,vim-enhanced,vim-minimal,vim-filesystem 表示安装成功，有的centos系统，默认包名不同。<br>2）若是缺少Vim包名：则在root下使用命令如下：<br>比如说： vim-minimal这个包少了，执行：yum -y install vim-minimal 命令，它会自动下载安装。<br>3）若下载完成，进行安装：<br>命令：yum -y install vim* 安装完成后则可以使用vim编辑器</p>
+<p><strong>二、gcc/g++</strong><br>Centos中使用yum来配置gcc和g++，在root账户下，若要安装gcc，则在命令行中输入:yum -y install gcc，按回车键就能够进行gcc的安装;若要安装g++，则需要在命令行中输入：yum -y install gcc-c++，就能够进行g++的安装。<br>gdb<br>先使用如下命令看系统中是否安装了gdb，如果安装了，如下图<br><img src="/img/TIM截图20181026134729.png" alt="这里写图片描述"><br>如果没有安装，则Centos中使用yum来安装gdb,在root账户下，在命令行中输入：yum install gdb，使用：which gdb 查看是否安装成功</p>
 
       
     </div>

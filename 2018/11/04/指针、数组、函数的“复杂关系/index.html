@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="模拟C库函数,">
+  <meta name="keywords" content="指针数组,数组指针,函数指针,">
 
 
 
@@ -79,18 +79,24 @@
 
 
 
-<meta name="description" content="&amp;emsp;关于C语言的库函数是面试官面试的热点护体，一方面是对函数的了解另一方面也是对C语言的应用有所考察。">
-<meta name="keywords" content="模拟C库函数">
+<meta name="description" content="一、指针数组①定义指针数组:    首先它是一个数组，数组的元素都是指针，数组占多少个字节由数组本身决定。它是“储存指针的数组”的简称。">
+<meta name="keywords" content="指针数组,数组指针,函数指针">
 <meta property="og:type" content="article">
-<meta property="og:title" content="让面试官满意的代码——模拟实现简单库函数">
-<meta property="og:url" content="http://yoursite.com/2018/10/26/让面试官满意的代码——模拟实现简单库函数/index.html">
+<meta property="og:title" content="指针、数组、函数的“复杂关系">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/指针、数组、函数的“复杂关系/index.html">
 <meta property="og:site_name" content="葵的博客">
-<meta property="og:description" content="&amp;emsp;关于C语言的库函数是面试官面试的热点护体，一方面是对函数的了解另一方面也是对C语言的应用有所考察。">
+<meta property="og:description" content="一、指针数组①定义指针数组:    首先它是一个数组，数组的元素都是指针，数组占多少个字节由数组本身决定。它是“储存指针的数组”的简称。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-26T15:20:38.899Z">
+<meta property="og:image" content="http://yoursite.com/img/TIM截图20181104214557.png">
+<meta property="og:image" content="http://yoursite.com/img/TIM截图20181104214650.png">
+<meta property="og:image" content="http://yoursite.com/img/TIM截图20181104214739.png">
+<meta property="og:image" content="http://yoursite.com/img/TIM截图20181104214833.png">
+<meta property="og:image" content="http://yoursite.com/img/TIM截图20181104214858.png">
+<meta property="og:updated_time" content="2018-11-04T13:56:21.564Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让面试官满意的代码——模拟实现简单库函数">
-<meta name="twitter:description" content="&amp;emsp;关于C语言的库函数是面试官面试的热点护体，一方面是对函数的了解另一方面也是对C语言的应用有所考察。">
+<meta name="twitter:title" content="指针、数组、函数的“复杂关系">
+<meta name="twitter:description" content="一、指针数组①定义指针数组:    首先它是一个数组，数组的元素都是指针，数组占多少个字节由数组本身决定。它是“储存指针的数组”的简称。">
+<meta name="twitter:image" content="http://yoursite.com/img/TIM截图20181104214557.png">
 
 
 
@@ -120,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/26/让面试官满意的代码——模拟实现简单库函数/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/04/指针、数组、函数的“复杂关系/">
 
 
 
 
 
-  <title>让面试官满意的代码——模拟实现简单库函数 | 葵的博客</title>
+  <title>指针、数组、函数的“复杂关系 | 葵的博客</title>
   
 
 
@@ -295,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/26/让面试官满意的代码——模拟实现简单库函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/指针、数组、函数的“复杂关系/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KUI">
@@ -312,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">让面试官满意的代码——模拟实现简单库函数</h1>
+          <h1 class="post-title" itemprop="name headline">指针、数组、函数的“复杂关系</h1>
         
 
         <div class="post-meta">
@@ -324,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-26T23:09:59+08:00">
-                2018-10-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T21:41:32+08:00">
+                2018-11-04
               </time>
             
 
@@ -384,36 +390,47 @@
       
 
       
-        <p>&emsp;关于C语言的库函数是面试官面试的热点护体，一方面是对函数的了解另一方面也是对C语言的应用有所考察。<br><a id="more"></a></p>
-<h2 id="一、模拟实现strlen"><a href="#一、模拟实现strlen" class="headerlink" title="一、模拟实现strlen"></a>一、模拟实现strlen</h2><ul>
-<li>方式一</li>
-</ul>
+        <h2 id="一、指针数组"><a href="#一、指针数组" class="headerlink" title="一、指针数组"></a>一、指针数组</h2><p>①定义<br>指针数组:    首先它是一个数组，数组的元素都是指针，数组占多少个字节由数组本身决定。它是“储存指针的数组”的简称。<br><a id="more"></a></p>
+<blockquote>
+<p>例如：int <em> </em>p1[10]; 这是一个数组，其包含10 个指向int 类型数据的指针，即指针数组。int <em> </em>修饰数组的元素。</p>
+</blockquote>
+<p>②应用:<br>1.指针数组常用在主函数传参，在写主函数时，参数有两个，一个确定参数个数，一个这是指针数组用来接收每个参数（字符串）的地址。</p>
+<blockquote>
+<p><code>int main(int argc, char *argv[])</code></p>
+</blockquote>
+<p>2.子函数传参的时候，传递数组的首地址，应该用二级指针接收。</p>
+<blockquote>
+<p><code>void fun(char **pp);//子函数中的形参
+fun(char *p[]);//主函数中的实参</code></p>
+</blockquote>
+<h2 id="二、数组指针"><a href="#二、数组指针" class="headerlink" title="二、数组指针"></a>二、数组指针</h2><p>①定义<br>数组指针:    首先它是一个指针，它指向一个数组。在32 位系统下永远是占4 个字节，<br>不能直接得出它指向的数组占多少字节。它是“指向数组的指针”的简称。</p>
+<blockquote>
+<p>例如：int (*p2)[10]; p2 是一个指针，它指向一个包含10 个int 类型数据的数组，即数组指针。int  修饰数组的内容。<br>②应用<br>1.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">char a[5] = &#123;&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;&#125;;</span><br><span class="line"></span><br><span class="line">	char (*p3)[5] = &amp;a;</span><br><span class="line">	char (*p4)[5] = a;//左边的类型是指向整个数组的指针，右边的数据类型是指向单个字符的指针，会进行隐式的类型转换，将a 指针转换为指向整个数组的指针</span><br><span class="line"></span><br><span class="line">    printf(&quot;%p \n&quot;,a);//数组首元素的地址</span><br><span class="line">	printf(&quot;%p \n&quot;, p3);//&amp;a 是整个数组的首地址</span><br><span class="line">	printf(&quot;%p \n&quot;, p4);//a是数组首元素的首地址</span><br><span class="line"></span><br><span class="line">	printf(&quot;%p \n&quot;, a + 1);//跳过一个char 类型的字节</span><br><span class="line">	printf(&quot;%p \n&quot;, p3 + 1);//跳过一个指针数组的字节</span><br><span class="line">	printf(&quot;%p \n&quot;, p4 + 1);//转换后 + 1 会跳过一个指针数组的字节</span><br><span class="line"></span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="/img/TIM截图20181104214557.png" alt="这里写图片描述"><br> 2.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[5]=&#123;&apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;D&apos;&#125;;</span><br><span class="line">    char (*p3)[10] = &amp;a;</span><br><span class="line">    char (*p4)[10] = a;</span><br><span class="line">    printf(&quot;%p \n&quot;,a);//数组首元素的地址</span><br><span class="line"> 	printf(&quot;%p \n&quot;, p3);//&amp;a 是整个数组的首地址</span><br><span class="line">	printf(&quot;%p \n&quot;, p4);//a是数组首元素的首地址</span><br><span class="line"></span><br><span class="line">	printf(&quot;%p \n&quot;, a + 1);//跳过一个char 类型的字节</span><br><span class="line">	printf(&quot;%p \n&quot;, p3 + 1);//跳过一个指针数组的字节</span><br><span class="line">	printf(&quot;%p \n&quot;, p4 + 1);//转换后 + 1 会跳过一个指针数组的字节</span><br><span class="line"></span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/TIM截图20181104214650.png" alt="这里写图片描述"><br>④总结<br>应用:    数组指针是一个指针，可以用来接收一个二维数组的地址。</p>
+<blockquote>
+<p><code>void fun(int (*P)[4]);//子函数中的形参，数组指针
+a[3][4] = {0};//主函数中定义的二维数组
+fun(a);//主函数调用子函数的实参，是二维数组的首元素首地址</code></p>
+</blockquote>
+<h2 id="三、函数指针"><a href="#三、函数指针" class="headerlink" title="三、函数指针"></a>三、函数指针</h2><p>①定义<br>函数指针:    函数指针就是函数的指针。它是一个指针，指向一个函数。</p>
+<blockquote>
+<p>例如：void (*pfun1)(); pfun是一个指针变量，它指向一个函数，这个函数没有参数，函数的返回值为一个空类型。<br>②应用<br>1.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">include &lt;asssert.h&gt;</span><br><span class="line">char * fun(char * p1,char * p2)</span><br><span class="line">&#123;</span><br><span class="line">    assert(p1 != NULL);</span><br><span class="line">    assert(p2 != NULL);</span><br><span class="line">    int i = 0;</span><br><span class="line">	i = strcmp(p1, p2);//字符串比较，若两者相等返回p1；否则返回 p2</span><br><span class="line">	if (0 == i)</span><br><span class="line">	&#123;</span><br><span class="line">		return p1;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		return p2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">     char * (*pf)(char * p1, char * p2);//pf是一个指针，指向一个参数为两个 char *，返回类型为 char *的函数</span><br><span class="line">	 pf = &amp;fun;//将函数fun的地址赋给pf</span><br><span class="line">	 printf(&quot;%s \n&quot;, (*pf) (&quot;aa&quot;, &quot;bb&quot;));</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="/img/TIM截图20181104214739.png" alt="这里写图片描述"></p>
 <hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//方式一：设置计数器</span><br><span class="line">int my_strlen(const char * str)</span><br><span class="line">&#123;</span><br><span class="line">	assert(str != NULL);</span><br><span class="line">	int count = 0;</span><br><span class="line">	while (*str)</span><br><span class="line">	&#123;</span><br><span class="line">		str++;</span><br><span class="line">		count++;</span><br><span class="line">	&#125;</span><br><span class="line">	return count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>方式二</li>
-</ul>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//二、不能创建临时变量计数器——递归</span><br><span class="line">int my_strlen(const char * str)</span><br><span class="line">&#123;</span><br><span class="line">	assert(str != NULL);</span><br><span class="line"></span><br><span class="line">	if (*str == &apos;\0&apos;)</span><br><span class="line">		return 0;</span><br><span class="line">	else</span><br><span class="line">		return 1 + my_strlen(str + 1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>方式三</li>
-</ul>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//三、指针 — 指针 即元素个数</span><br><span class="line">int my_strlen(char *s)</span><br><span class="line">&#123;</span><br><span class="line">	assert(s != NULL);</span><br><span class="line"></span><br><span class="line">	char *p = s;</span><br><span class="line">	while (*p != &apos;\0&apos;)</span><br><span class="line">	&#123;</span><br><span class="line">		p++;</span><br><span class="line">	&#125;</span><br><span class="line">	return p - s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>main函数</p>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char str[] = &quot;abcdef&quot;;</span><br><span class="line"></span><br><span class="line">	printf(&quot; %d \n&quot;, my_strlen(str));//6</span><br><span class="line"></span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="二、模拟实现strcpy"><a href="#二、模拟实现strcpy" class="headerlink" title="二、模拟实现strcpy"></a>二、模拟实现strcpy</h2><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">char *my_strcpy(char *target, const char *source)</span><br><span class="line">&#123;</span><br><span class="line">	char *start = target;</span><br><span class="line">	assert(target != NULL);</span><br><span class="line">	assert(source != NULL);</span><br><span class="line">	while (*target++ = *source++)</span><br><span class="line">	&#123;</span><br><span class="line">		;</span><br><span class="line">	&#125;</span><br><span class="line">	return start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char str1[10] = &quot;0&quot;;//防止越界产生</span><br><span class="line">	char str2[15] = &quot;abcdef&quot;;</span><br><span class="line">	printf(&quot;str1: %s \n&quot;, my_strcpy(str1, str2));</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="三、模拟实现strcat"><a href="#三、模拟实现strcat" class="headerlink" title="三、模拟实现strcat"></a>三、模拟实现strcat</h2><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">char *my_strcat(char *target, const char *source)</span><br><span class="line">&#123;</span><br><span class="line">	char *start = target;</span><br><span class="line">	assert(target != NULL);</span><br><span class="line">	assert(source != NULL);</span><br><span class="line">	while (*target)</span><br><span class="line">	&#123;</span><br><span class="line">		target++;</span><br><span class="line">	&#125;</span><br><span class="line">	while (*target++ = *source++)</span><br><span class="line">	&#123;</span><br><span class="line">		;</span><br><span class="line">	&#125;</span><br><span class="line">	return start;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char str1[15] = &quot;abcdef&quot;;</span><br><span class="line">	char str2[] = &quot;ghijk&quot;;</span><br><span class="line">	printf(&quot;str1: %s \n&quot;, my_strcat(str1, str2));</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="四、模拟实现strstr"><a href="#四、模拟实现strstr" class="headerlink" title="四、模拟实现strstr"></a>四、模拟实现strstr</h2><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">char *my_strstr(const char *str1, const char *str2)</span><br><span class="line">&#123;</span><br><span class="line">	assert(str1);</span><br><span class="line">	assert(str2);</span><br><span class="line"></span><br><span class="line">	char *cp = (char *)str1;</span><br><span class="line">	char *substr = (char *)str2;</span><br><span class="line">	char *s1 = NULL;</span><br><span class="line"></span><br><span class="line">	if (*str2 == &apos;\0&apos;)</span><br><span class="line">	&#123;</span><br><span class="line">		return NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	while (*cp)</span><br><span class="line">	&#123;</span><br><span class="line">		s1 = cp;</span><br><span class="line">		substr = str2;</span><br><span class="line">		while (*s1 &amp;&amp; *substr &amp;&amp; (*s1 == *substr))</span><br><span class="line">		&#123;</span><br><span class="line">			s1++;</span><br><span class="line">			substr++;</span><br><span class="line">		&#125;</span><br><span class="line">		if (*substr == &apos;\0&apos;)</span><br><span class="line">		&#123;</span><br><span class="line">			return cp;</span><br><span class="line">		&#125;</span><br><span class="line">		cp++;</span><br><span class="line">		if (*cp == &apos;\0&apos;)</span><br><span class="line">			return NULL;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	const char str1[] = &quot;abbbcccdefgh&quot;;</span><br><span class="line">	const char str2[] = &quot;ghi&quot;;</span><br><span class="line">	char *ret = my_strstr(str1, str2);</span><br><span class="line">	if (ret == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot; str2 不是 str1 的子字符串\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot; str2 是 atr1 的从 %d 位开始的子字符串\n&quot;,ret - str1+1);</span><br><span class="line">	&#125;</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="五、模拟实现strchr"><a href="#五、模拟实现strchr" class="headerlink" title="五、模拟实现strchr"></a>五、模拟实现strchr</h2><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">char *my_strchr(const char *str, char c)</span><br><span class="line">&#123;</span><br><span class="line">	assert(str != NULL);</span><br><span class="line">	while (*str)</span><br><span class="line">	&#123;</span><br><span class="line">		if (*(str++) == c)//对实际地址进行了后置++操作</span><br><span class="line">		&#123;</span><br><span class="line">			return str - 1;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return NULL;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char str[] = &quot;abcdefdgh&quot;;</span><br><span class="line">	char c = &apos;a&apos;;</span><br><span class="line">	char *p = my_strchr(str, c);</span><br><span class="line">	if (NULL == *p)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot; %s 字符串中没有 %c 字符\n&quot;,str, c);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%c 首次出现在 %s 的位置是：%d \n&quot;,c, str, p - str  + 1);</span><br><span class="line">	&#125;</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="六、模拟实现strcpy"><a href="#六、模拟实现strcpy" class="headerlink" title="六、模拟实现strcpy"></a>六、模拟实现strcpy</h2><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">int my_strcmp(const char *s1, const char *s2)</span><br><span class="line">&#123;</span><br><span class="line">	assert(s1 != NULL);</span><br><span class="line">	assert(s2 != NULL);</span><br><span class="line">	int ret = 0;</span><br><span class="line">	while (!(ret = *(unsigned char *)s1 - *(unsigned char *)s2) &amp;&amp; *s2)// 用！操作符控制循环，将比较换为减法得到数值正负，</span><br><span class="line">	&#123;</span><br><span class="line">		++s1;</span><br><span class="line">		++s2;</span><br><span class="line">	&#125;</span><br><span class="line">	if (ret &lt; 0)</span><br><span class="line">	&#123;</span><br><span class="line">		ret = -1;</span><br><span class="line">	&#125;</span><br><span class="line">	else if (ret &gt; 0)</span><br><span class="line">	&#123;</span><br><span class="line">		ret = 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return ret;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char str1[] = &quot;cd&quot;;</span><br><span class="line">	char str2[] = &quot;ab&quot;;</span><br><span class="line">	int i = my_strcmp(str1, str2);</span><br><span class="line">	if (0 == i)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;str1 :%s 和 str2 :%s 相等\n&quot;,str1, str2);</span><br><span class="line">	&#125;</span><br><span class="line">	else if (0 &lt; i)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;str1:%s 大于 str2:%s \n&quot;,str1, str2);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;str1:%s 小于 str2:%s \n&quot;, str1, str2);</span><br><span class="line">	&#125;</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><strong>好东西要留到最后阐述，一步一步的深入去讲应该是一个不错的选择！</strong></p>
+<h2 id="四、函数指针数组"><a href="#四、函数指针数组" class="headerlink" title="四、函数指针数组"></a>四、函数指针数组</h2><p> ①定义<br>函数指针数组:    把函数的地址存到一个数组中，那这个数组就叫函数指针数组。</p>
+<blockquote>
+<p>例如：char <em> </em>(<em>pf[3])(char </em> *p); 它是一个数组，数组名为pf，数组内存储了3 个指向函数的指针。这些指针指向一些返回值类型为指向字符的指针、参数为一个指向字符的指针的函数。<br>②应用<br>1.转移表实现计算器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int Add(int a, int b)</span><br><span class="line">&#123;</span><br><span class="line">	return a + b;</span><br><span class="line">&#125;</span><br><span class="line">int Sub(int a, int b)</span><br><span class="line">&#123;</span><br><span class="line">	return a - b;</span><br><span class="line">&#125;</span><br><span class="line">int Mul(int a, int b)</span><br><span class="line">&#123;</span><br><span class="line">	return a*b;</span><br><span class="line">&#125;</span><br><span class="line">int Div(int a, int b)</span><br><span class="line">&#123;</span><br><span class="line">	return a / b;</span><br><span class="line">&#125;</span><br><span class="line">int div(int a, int b)</span><br><span class="line">&#123;</span><br><span class="line">return a / b;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int x = 0;</span><br><span class="line">	int	y = 0;</span><br><span class="line">	int input = 1;</span><br><span class="line">	int ret = 0;</span><br><span class="line">	int(*p[5])(int x, int y) = &#123; 0, Add, Sub, Mul, Div &#125;; //转移表数组存放了不同子函数的地址</span><br><span class="line">	while (input)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;*************************\n&quot;);</span><br><span class="line">		printf(&quot; 1:Add             2:Sub \n&quot;);</span><br><span class="line">		printf(&quot; 3:Mul             4:Div \n&quot;);</span><br><span class="line">		printf(&quot;*************************\n&quot;);</span><br><span class="line">		printf(&quot;请选择：&quot;);</span><br><span class="line">		scanf(&quot;%d&quot;, &amp;input);</span><br><span class="line">		if ((input &lt;= 4 &amp;&amp; input &gt;= 1))</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;输入操作数：&quot;);</span><br><span class="line">			scanf(&quot;%d%d&quot;, &amp;x, &amp;y);</span><br><span class="line">			ret = (*p[input])(x, y);</span><br><span class="line">			printf(&quot;ret = %d\n&quot;, ret);</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">			printf(&quot;输入有误\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="/img/TIM截图20181104214833.png" alt="这里写图片描述"><br>③总结<br>作用:    函数指针数组在子函数较多时可以通过不同的调用方法调用函数就来减少代码，使其更加简便。</p>
+<h2 id="五、指向函数指针数组的指针"><a href="#五、指向函数指针数组的指针" class="headerlink" title="五、指向函数指针数组的指针"></a>五、指向函数指针数组的指针</h2><p>①定义<br>指向函数指针数组的指针:    指向函数指针数组的指针是.一个指针，指针指向.一个 数组 ，数组的元素都是函数指针 。</p>
+<blockquote>
+<p>例如：char <em> (</em>(<em>pf)[3])(char </em> p); pf 是指针。这个指针指向一个包含了3 个元素的数组；这个数组里面存的是指向函数的指针；这些指针指向一些返回值类型为指向字符的指针、参数为一个指向字符的指针的函数。<br>②应用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">char * fun1(char * p)</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;%s\n&quot;, p);</span><br><span class="line">	return p;</span><br><span class="line">&#125;</span><br><span class="line">char * fun2(char * p)</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;%s\n&quot;, p);</span><br><span class="line">	return p;</span><br><span class="line">&#125;</span><br><span class="line">char * fun3(char * p)</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;%s\n&quot;, p);</span><br><span class="line">	return p;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">intmain()</span><br><span class="line">&#123;</span><br><span class="line">    char * (*a[3])(char * p);//函数指针数组a</span><br><span class="line">	char * (*(*pf)[3])(char * p);//指向函数指针数组的指针pf</span><br><span class="line">	pf = &amp;a;</span><br><span class="line">	a[0] = fun1;//函数名即函数地址</span><br><span class="line">	a[1] = &amp;fun2;</span><br><span class="line">	a[2] = &amp;fun3;</span><br><span class="line">	pf[0][0](&quot;fun1&quot;);</span><br><span class="line">	pf[0][1](&quot;fun2&quot;);</span><br><span class="line">	pf[0][2](&quot;fun3&quot;);</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="/img/TIM截图20181104214858.png" alt="这里写图片描述"></p>
+<p>③总结<br>无论是指向函数指针数组的指针，还是其它的内容，都应该注意 * 和 [ ] 的结合，从而来辨清其概念。</p>
 
       
     </div>
@@ -431,7 +448,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/模拟C库函数/" rel="tag"><i class="fa fa-tag"></i> 模拟C库函数</a>
+            <a href="/tags/指针数组/" rel="tag"><i class="fa fa-tag"></i> 指针数组</a>
+          
+            <a href="/tags/数组指针/" rel="tag"><i class="fa fa-tag"></i> 数组指针</a>
+          
+            <a href="/tags/函数指针/" rel="tag"><i class="fa fa-tag"></i> 函数指针</a>
           
         </div>
       
@@ -444,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/25/Linux学习基础/" rel="next" title="Linux学习基础">
-                <i class="fa fa-chevron-left"></i> Linux学习基础
+              <a href="/2018/11/01/模拟实现memcpy和memmove函数/" rel="next" title="模拟实现memcpy和memmove函数">
+                <i class="fa fa-chevron-left"></i> 模拟实现memcpy和memmove函数
               </a>
             
           </div>
@@ -453,10 +474,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/28/几个经典的关于动态内存的面试题/" rel="prev" title="几个经典的关于动态内存的面试题">
-                几个经典的关于动态内存的面试题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -588,7 +605,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、模拟实现strlen"><span class="nav-number">1.</span> <span class="nav-text">一、模拟实现strlen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、模拟实现strcpy"><span class="nav-number">2.</span> <span class="nav-text">二、模拟实现strcpy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、模拟实现strcat"><span class="nav-number">3.</span> <span class="nav-text">三、模拟实现strcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、模拟实现strstr"><span class="nav-number">4.</span> <span class="nav-text">四、模拟实现strstr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、模拟实现strchr"><span class="nav-number">5.</span> <span class="nav-text">五、模拟实现strchr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、模拟实现strcpy"><span class="nav-number">6.</span> <span class="nav-text">六、模拟实现strcpy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、指针数组"><span class="nav-number">1.</span> <span class="nav-text">一、指针数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、数组指针"><span class="nav-number">2.</span> <span class="nav-text">二、数组指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、函数指针"><span class="nav-number">3.</span> <span class="nav-text">三、函数指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、函数指针数组"><span class="nav-number">4.</span> <span class="nav-text">四、函数指针数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、指向函数指针数组的指针"><span class="nav-number">5.</span> <span class="nav-text">五、指向函数指针数组的指针</span></a></li></ol></div>
             
 
           </div>

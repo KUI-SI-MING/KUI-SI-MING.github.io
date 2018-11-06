@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/img/TIM截图20181104214739.png">
 <meta property="og:image" content="http://yoursite.com/img/TIM截图20181104214833.png">
 <meta property="og:image" content="http://yoursite.com/img/TIM截图20181104214858.png">
-<meta property="og:updated_time" content="2018-11-04T13:56:21.564Z">
+<meta property="og:updated_time" content="2018-11-05T15:40:44.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="指针、数组、函数的“复杂关系">
 <meta name="twitter:description" content="一、指针数组①定义指针数组:    首先它是一个数组，数组的元素都是指针，数组占多少个字节由数组本身决定。它是“储存指针的数组”的简称。">
@@ -405,8 +405,9 @@ fun(char *p[]);//主函数中的实参</code></p>
 </blockquote>
 <h2 id="二、数组指针"><a href="#二、数组指针" class="headerlink" title="二、数组指针"></a>二、数组指针</h2><p>①定义<br>数组指针:    首先它是一个指针，它指向一个数组。在32 位系统下永远是占4 个字节，<br>不能直接得出它指向的数组占多少字节。它是“指向数组的指针”的简称。</p>
 <blockquote>
-<p>例如：int (*p2)[10]; p2 是一个指针，它指向一个包含10 个int 类型数据的数组，即数组指针。int  修饰数组的内容。<br>②应用<br>1.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">char a[5] = &#123;&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;&#125;;</span><br><span class="line"></span><br><span class="line">	char (*p3)[5] = &amp;a;</span><br><span class="line">	char (*p4)[5] = a;//左边的类型是指向整个数组的指针，右边的数据类型是指向单个字符的指针，会进行隐式的类型转换，将a 指针转换为指向整个数组的指针</span><br><span class="line"></span><br><span class="line">    printf(&quot;%p \n&quot;,a);//数组首元素的地址</span><br><span class="line">	printf(&quot;%p \n&quot;, p3);//&amp;a 是整个数组的首地址</span><br><span class="line">	printf(&quot;%p \n&quot;, p4);//a是数组首元素的首地址</span><br><span class="line"></span><br><span class="line">	printf(&quot;%p \n&quot;, a + 1);//跳过一个char 类型的字节</span><br><span class="line">	printf(&quot;%p \n&quot;, p3 + 1);//跳过一个指针数组的字节</span><br><span class="line">	printf(&quot;%p \n&quot;, p4 + 1);//转换后 + 1 会跳过一个指针数组的字节</span><br><span class="line"></span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>例如：int (*p2)[10]; p2 是一个指针，它指向一个包含10 个int 类型数据的数组，即数组指针。int  修饰数组的内容。</p>
 </blockquote>
+<p>②应用<br>1.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">char a[5] = &#123;&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;&#125;;</span><br><span class="line"></span><br><span class="line">	char (*p3)[5] = &amp;a;</span><br><span class="line">	char (*p4)[5] = a;//左边的类型是指向整个数组的指针，右边的数据类型是指向单个字符的指针，会进行隐式的类型转换，将a 指针转换为指向整个数组的指针</span><br><span class="line"></span><br><span class="line">    printf(&quot;%p \n&quot;,a);//数组首元素的地址</span><br><span class="line">	printf(&quot;%p \n&quot;, p3);//&amp;a 是整个数组的首地址</span><br><span class="line">	printf(&quot;%p \n&quot;, p4);//a是数组首元素的首地址</span><br><span class="line"></span><br><span class="line">	printf(&quot;%p \n&quot;, a + 1);//跳过一个char 类型的字节</span><br><span class="line">	printf(&quot;%p \n&quot;, p3 + 1);//跳过一个指针数组的字节</span><br><span class="line">	printf(&quot;%p \n&quot;, p4 + 1);//转换后 + 1 会跳过一个指针数组的字节</span><br><span class="line"></span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="/img/TIM截图20181104214557.png" alt="这里写图片描述"><br> 2.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[5]=&#123;&apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;D&apos;&#125;;</span><br><span class="line">    char (*p3)[10] = &amp;a;</span><br><span class="line">    char (*p4)[10] = a;</span><br><span class="line">    printf(&quot;%p \n&quot;,a);//数组首元素的地址</span><br><span class="line"> 	printf(&quot;%p \n&quot;, p3);//&amp;a 是整个数组的首地址</span><br><span class="line">	printf(&quot;%p \n&quot;, p4);//a是数组首元素的首地址</span><br><span class="line"></span><br><span class="line">	printf(&quot;%p \n&quot;, a + 1);//跳过一个char 类型的字节</span><br><span class="line">	printf(&quot;%p \n&quot;, p3 + 1);//跳过一个指针数组的字节</span><br><span class="line">	printf(&quot;%p \n&quot;, p4 + 1);//转换后 + 1 会跳过一个指针数组的字节</span><br><span class="line"></span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="/img/TIM截图20181104214650.png" alt="这里写图片描述"><br>④总结<br>应用:    数组指针是一个指针，可以用来接收一个二维数组的地址。</p>
 <blockquote>
@@ -554,7 +555,7 @@ fun(a);//主函数调用子函数的实参，是二维数组的首元素首地�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -565,7 +566,7 @@ fun(a);//主函数调用子函数的实参，是二维数组的首元素首地�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -576,7 +577,7 @@ fun(a);//主函数调用子函数的实参，是二维数组的首元素首地�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

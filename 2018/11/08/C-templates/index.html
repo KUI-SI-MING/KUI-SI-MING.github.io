@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="葵的博客">
 <meta property="og:description" content="&amp;emsp;C++ templates的最初发展是为了建立“类型安全”的容器如：vector，list和map。但是随着templates的发展，有人意识到C++ templates机制本身就是一步完整的图灵机：它可以被用来计算任何可以计算的值，于是导出了模板元编程，创造出了“在C++编译器内执行并于编译完成时停止执行”的程序。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T06:15:12.117Z">
+<meta property="og:updated_time" content="2018-11-08T06:22:24.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ templates">
 <meta name="twitter:description" content="&amp;emsp;C++ templates的最初发展是为了建立“类型安全”的容器如：vector，list和map。但是随着templates的发展，有人意识到C++ templates机制本身就是一步完整的图灵机：它可以被用来计算任何可以计算的值，于是导出了模板元编程，创造出了“在C++编译器内执行并于编译完成时停止执行”的程序。">
@@ -394,7 +394,7 @@
 </ul>
 <p>&emsp;&emsp;&emsp;<font color="black" size="4" face="黑体">对于函数模板参数的匹配则又可以分为以下几点：</font></p>
 <blockquote>
-<p> 一个非模板函数可以和一个同名的函数模板同时存在，而且该函数模板还可以被实例化为这个非模板函数<br> . 对于非模板函数和同名函数模板，如果其他条件都相同，在调动时会优先调用非模板函数而不会从该模板产生出一个实例。如果模板可以产生一个具有更好匹配的函数， 那么将选择模板<br>  显式指定一个空的模板实参列表，该语法告诉编译器只有模板才能来匹配这个调用， 而且所有的模板参数都应该根据实参演绎出来<br>  模板函数不允许自动类型转换，但普通函数可以进行自动类型转换</p>
+<p>1.一个非模板函数可以和一个同名的函数模板同时存在，而且该函数模板还可以被实例化为这个非模板函数<br>2.对于非模板函数和同名函数模板，如果其他条件都相同，在调动时会优先调用非模板函数而不会从该模板产生出一个实例。如果模板可以产生一个具有更好匹配的函数， 那么将选择模板<br>3.显式指定一个空的模板实参列表，该语法告诉编译器只有模板才能来匹配这个调用， 而且所有的模板参数都应该根据实参演绎出来<br>4.模板函数不允许自动类型转换，但普通函数可以进行自动类型转换</p>
 </blockquote>
 <ul>
 <li><font color="black" size="4" face="楷体"><strong>类模板</strong><br>&emsp;<font color="black" size="4" face="黑体">类模板中函数放在类外进行定义时，需要加模板参数列表，类模板实例化与函数模板实例化不同，类模板实例化需要在类模板名字后跟&lt;&gt;，然后将实例化的类型放在&lt;&gt;中即可，类模板名字不是真正的类，而实例化的结果才是真正的类。</font></font></li>

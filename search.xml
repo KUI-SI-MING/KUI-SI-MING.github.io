@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[数据结构面试题C++版(一)]]></title>
+    <title><![CDATA[数据结构面试题C++版(二)]]></title>
     <url>%2F2019%2F03%2F28%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%9D%A2%E8%AF%95%E9%A2%98C-%2B%2B%E7%89%88(%E4%BA%8C)%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[&emsp;&emsp;使用C++语言解决常见的数据结构面试题 一、二叉树&emsp;&emsp;1.创建二叉树12345678910111213141516171819202122232425262728293031323334typedef struct BinaryTreeNode&#123; BTDataType data; struct BinaryTreeNode* left; struct BinaryTreeNode* right;&#125;BTNode, *pBTNode;pBTNode BuyBTNode(BTDataType x)&#123; pBTNode newnode = (pBTNode)malloc(sizeof(BTNode)); newnode-&gt;data = x; newnode-&gt;left = NULL; newnode-&gt;right = NULL; return newnode;&#125;pBTNode BinaryTreeCreate(BTDataType* a, int n, int* pi)//对当前数组进行取址操作，若为取值则在每次递归返回后 i 的值并没有改变&#123; assert(a); if (a[*pi] != '#') &#123; pBTNode root = BuyBTNode(a[*pi]); ++(*pi); root-&gt;left = BinaryTreeCreate(a, n, pi); ++(*pi); root-&gt;right = BinaryTreeCreate(a, n, pi); return root; &#125; else &#123; return NULL; &#125;&#125; &emsp;&emsp;2.前/中/后遍历二叉树(递归&amp;非递归)123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105//前序递归void preOrder(BinTree *root)&#123; if(root!=NULL) &#123; cout&lt;&lt;root-&gt;data&lt;&lt;" "; preOrder1(root-&gt;lchild); preOrder1(root-&gt;rchild); &#125;&#125;//前序非递归void preOrder_R(BinTree *root) //非递归前序遍历 &#123; stack&lt;BinTree*&gt; s; BinTree *p=root; while(p!=NULL||!s.empty()) &#123; while(p!=NULL) &#123; cout&lt;&lt;p-&gt;data&lt;&lt;" "; s.push(p); p=p-&gt;lchild; &#125; if(!s.empty()) &#123; p=s.top(); s.pop(); p=p-&gt;rchild; &#125; &#125;&#125;//递归中序void inOrder(BinTree *root) &#123; if(root!=NULL) &#123; inOrder1(root-&gt;lchild); cout&lt;&lt;root-&gt;data&lt;&lt;" "; inOrder1(root-&gt;rchild); &#125;&#125;//非递归中序void inOrder_R(BinTree *root) &#123; stack&lt;BinTree*&gt; s; BinTree *p=root; while(p!=NULL||!s.empty()) &#123; while(p!=NULL) &#123; s.push(p); p=p-&gt;lchild; &#125; if(!s.empty()) &#123; p=s.top(); cout&lt;&lt;p-&gt;data&lt;&lt;" "; s.pop(); p=p-&gt;rchild; &#125; &#125; &#125;//递归后序void postOrder1(BinTree *root) if(root!=NULL) &#123; postOrder1(root-&gt;lchild); postOrder1(root-&gt;rchild); cout&lt;&lt;root-&gt;data&lt;&lt;" "; &#125; &#125;//非递归后序void postOrder2(BinTree *root) &#123; stack&lt;BTNode*&gt; s; BinTree *p=root; BTNode *temp; while(p!=NULL||!s.empty()) &#123; while(p!=NULL) //沿左子树一直往下搜索，直至出现没有左子树的结点 &#123; BTNode *btn=(BTNode *)malloc(sizeof(BTNode)); btn-&gt;btnode=p; btn-&gt;isFirst=true; s.push(btn); p=p-&gt;lchild; &#125; if(!s.empty()) &#123; temp=s.top(); s.pop(); if(temp-&gt;isFirst==true) //表示是第一次出现在栈顶 &#123; temp-&gt;isFirst=false; s.push(temp); p=temp-&gt;btnode-&gt;rchild; &#125; else //第二次出现在栈顶 &#123; cout&lt;&lt;temp-&gt;btnode-&gt;data&lt;&lt;" "; p=NULL; &#125; &#125; &#125; &#125; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;]]></content>
+      <tags>
+        <tag>二叉树</tag>
+        <tag>二叉搜索树</tag>
+        <tag>堆</tag>
+        <tag>哈希</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[数据结构面试题C++版（一）]]></title>

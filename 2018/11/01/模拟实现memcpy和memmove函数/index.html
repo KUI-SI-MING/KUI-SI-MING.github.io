@@ -132,22 +132,22 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;使用cyu模拟实现库函数memcpy和memmove函数">
+<meta name="description" content="&amp;emsp;&amp;emsp;使用C语言模拟实现库函数memcpy和memmove函数">
 <meta name="keywords" content="模拟实现库函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模拟实现memcpy和memmove函数">
 <meta property="og:url" content="http://yoursite.com/2018/11/01/模拟实现memcpy和memmove函数/index.html">
 <meta property="og:site_name" content="葵的博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;使用cyu模拟实现库函数memcpy和memmove函数">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;使用C语言模拟实现库函数memcpy和memmove函数">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/TIM截图20181101230554.png">
 <meta property="og:image" content="http://yoursite.com/img/TIM截图20181101230705.png">
 <meta property="og:image" content="http://yoursite.com/img/TIM截图20181101230740.png">
 <meta property="og:image" content="http://yoursite.com/img/TIM截图20181101230825.png">
-<meta property="og:updated_time" content="2019-04-04T11:46:46.506Z">
+<meta property="og:updated_time" content="2019-04-04T12:04:00.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模拟实现memcpy和memmove函数">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;使用cyu模拟实现库函数memcpy和memmove函数">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;使用C语言模拟实现库函数memcpy和memmove函数">
 <meta name="twitter:image" content="http://yoursite.com/img/TIM截图20181101230554.png">
 
 
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  551
+                  553
                 </span>
               
 
@@ -467,7 +467,7 @@
       
 
       
-        <p>&emsp;&emsp;<font color="black" size="4" face="微软雅黑">使用cyu模拟实现库函数memcpy和memmove函数<br><a id="more"></a></font></p>
+        <p>&emsp;&emsp;<font color="black" size="4" face="微软雅黑">使用C语言模拟实现库函数memcpy和memmove函数<br><a id="more"></a></font></p>
 <h3 id="一、模拟memcpy"><a href="#一、模拟memcpy" class="headerlink" title="一、模拟memcpy"></a><font color="black" size="4" face="微软雅黑">一、模拟memcpy</font></h3><p>&emsp;&emsp;<font color="black" size="4" face="微软雅黑">memcpy函数: memcpy函数的原型为：<code>void *memcpy(void *dest, void *src, unsigned int count);</code>是在不相关空间中进行的可以将指定字节数的内容拷贝到目标空间的C库函数。返回值为一个指针。可以说memcpy函数是memmove函数的一个子函数。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> * <span class="title">my_memcpy</span><span class="params">(<span class="keyword">void</span> *dst, <span class="keyword">const</span> <span class="keyword">void</span> *sou, <span class="keyword">size_t</span> num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	assert(dst != <span class="literal">NULL</span>);</span><br><span class="line">	assert(sou != <span class="literal">NULL</span>);</span><br><span class="line">	<span class="keyword">void</span> *ret = dst;<span class="comment">//用空类型来接收参数和返回参数</span></span><br><span class="line">	<span class="keyword">while</span> (num--)</span><br><span class="line">	&#123;</span><br><span class="line">		*(<span class="keyword">char</span> *)dst = *(<span class="keyword">char</span> *)sou;<span class="comment">//因为不确定其参数类型，故将其强转为（char *）型用一个字节进行来计算</span></span><br><span class="line">		dst = (<span class="keyword">char</span> *)dst + <span class="number">1</span>;</span><br><span class="line">		sou = (<span class="keyword">char</span> *)sou + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> str1[] = <span class="string">"sbcdefghi"</span>;</span><br><span class="line">	<span class="keyword">char</span> str2[] = <span class="string">"aabbcc"</span>;</span><br><span class="line">	<span class="keyword">int</span> sz = <span class="keyword">sizeof</span>(str2) / <span class="keyword">sizeof</span>(str2[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> *ret = my_memcpy(str1, str2, <span class="number">5</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s \n"</span>, str1);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></font></p>
 <p>如图：<br><img src="/img/TIM截图20181101230554.png" alt="这里写图片描述"></p>
 <h3 id="二、memmove"><a href="#二、memmove" class="headerlink" title="二、memmove"></a><font color="black" size="4" face="微软雅黑">二、memmove</font></h3><p>&emsp;&emsp;<font color="black" size="4" face="微软雅黑">memcpy函数:memmove函数的原型为:<code>void *memmove( void* dest, const void* src, size_t count );</code>它和memcpy函数的区别即在于该函数可以实现内存重叠区域的内容拷贝，若目标区域和源区域没有重叠，则功能和memcpy函数相同。<br>&emsp;&emsp;<font color="black" size="4" face="微软雅黑">模拟实现图解：</font></font></p>
